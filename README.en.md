@@ -23,6 +23,8 @@ Token Glass shows today's input, output, cache and lifetime token totals in a mo
 
 ## Quick start
 
+A Windows x64 portable package is available in [Releases](https://github.com/Whitersir/token-glass/releases/latest). It includes the compiled widget; Node.js 20+ is still required. Run `setup.cmd` to create private local configuration. To build from source:
+
 Requirements: Windows x64, Node.js 20+, .NET Framework 4.8 and Windows WinRT metadata. Primarily tested on Windows 11; the Windows 10 2004+ path has not been verified on a physical machine. Visual Studio is not required.
 
 ```powershell

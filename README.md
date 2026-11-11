@@ -53,6 +53,8 @@ Token Glass 是一个在本机运行的 AI token 统计工具：用圆角玻璃�
 
 ### 从源码启动
 
+也可以从 [Releases](https://github.com/Whitersir/token-glass/releases/latest) 下载 Windows x64 便携包。包内含已编译的悬浮条；仍需安装 Node.js 20+，然后双击 `setup.cmd` 生成本机配置。源码安装方式如下：
+
 ```powershell
 git clone https://github.com/Whitersir/token-glass.git
 cd token-glass
@@ -84,7 +86,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File setup.ps1
 
 本机连接密钥自动生成，无需手工填写。改变端口后重新运行 `node src/prepare-browser-extension.js`，并在 Chrome 中重新加载扩展。
 
-**网页数据的边界：**只统计页面已经加载的可见消息；不包含图片、附件、隐藏推理、上下文重复发送、缓存或工具调用。首次打开的历史消息归入本机首次接收计数的日期。通过会话计数最大值避免刷新、流式更新和重复标签页重复累计；无法还原分支、重新生成或跨天离线期间的完整调用历史。详见[使用文档](docs/usage.md)。
+**网页数据的边界：** 只统计页面已经加载的可见消息；不包含图片、附件、隐藏推理、上下文重复发送、缓存或工具调用。首次打开的历史消息归入本机首次接收计数的日期。通过会话计数最大值避免刷新、流式更新和重复标签页重复累计；无法还原分支、重新生成或跨天离线期间的完整调用历史。详见[使用文档](docs/usage.md)。
 
 ## 配置与命令
 
@@ -146,3 +148,4 @@ CI 验证 JavaScript 测试、Windows 编译与关闭 / 重开逻辑；无桌面
 效果与架构研究参考了 [WPF Liquid Glass](https://github.com/dragosniamtu/WPF-Liquid-Glass-Effect)、[Island Command Center](https://github.com/primez-x/windhawk-island-command-center) 以及 Microsoft 的 Windows Composition / Direct2D 文档；未引入这些项目的运行库。介绍页组织参考了 [ccusage](https://github.com/ccusage/ccusage) 与 [PowerToys](https://github.com/microsoft/PowerToys)。
 
 代码采用 [MIT License](LICENSE)。
+
