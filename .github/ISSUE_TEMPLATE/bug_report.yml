@@ -1,0 +1,22 @@
+name: Bug report / 问题反馈
+description: Report a reproducible problem without personal logs or secrets.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened? / 发生了什么？
+      description: Include expected behavior and steps to reproduce. Do not paste chat transcripts or connection keys.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment / 运行环境
+      placeholder: Windows 11 x64, 150% scaling, Node 22, Chrome
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Redacted diagnostics / 脱敏诊断
+      description: Remove usernames, paths, session IDs, and all secrets. Use synthetic examples where possible.

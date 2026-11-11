@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Token 本地统计 · 网页助手",
+  "version": "1.1.0",
+  "description": "在本机估算 ChatGPT / Claude 网页可见聊天文本的 Token，只回传计数，不保存正文。",
+  "minimum_chrome_version": "120",
+  "permissions": ["storage", "alarms"],
+  "host_permissions": ["http://127.0.0.1/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{
+    "matches": ["https://chatgpt.com/*", "https://chat.openai.com/*", "https://claude.ai/*"],
+    "js": ["core.js", "content.js"],
+    "run_at": "document_idle"
+  }],
+  "action": { "default_title": "网页 Token 文本估算", "default_popup": "popup.html" }
+}

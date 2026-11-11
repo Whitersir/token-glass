@@ -1,0 +1,14 @@
+data/
+*.log
+node_modules/
+node-path.txt
+browser-extension/connection.js
+config.json
+backup/
+bin/
+dist/
+.publish/
+*.tmp
+*.zip
+.DS_Store
+Thumbs.db

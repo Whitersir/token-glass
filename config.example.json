@@ -1,0 +1,13 @@
+{
+  "port": 7681,
+  "refreshSeconds": 30,
+  "timezone": "Asia/Shanghai",
+  "browserBridge": { "enabled": true },
+  "historicalTokens": { "codex": 0, "claude": 0 },
+  "sources": {
+    "codex": { "enabled": true, "roots": [] },
+    "claude": { "enabled": true, "roots": [] },
+    "chatgpt-web": { "enabled": true },
+    "claude-web": { "enabled": true }
+  }
+}

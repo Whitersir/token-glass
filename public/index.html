@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Token 本地用量</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div class="brand"><span class="brand-icon" aria-hidden="true">▥</span><span>Token<span class="brand-light"> / 本地用量</span></span></div>
+      <span class="local-badge"><span></span>仅在本机运行</span>
+    </header>
+    <main>
+      <div class="heading">
+        <div><p class="eyebrow">YOUR AI ACTIVITY, IN ONE PLACE</p><h1>每一次调用，都有迹可循<span>。</span></h1><p class="subtitle">把分散的 AI 用量，汇成清楚的本地记录。</p></div>
+        <button id="sync" class="primary">↻ <span>立即同步</span></button>
+      </div>
+      <section class="toolbar" aria-label="统计筛选">
+        <div class="range-buttons" role="group" aria-label="时间范围"><button data-range="today">今天</button><button data-range="7">近 7 天</button><button data-range="30">近 30 天</button><button data-range="all" class="active" aria-pressed="true">全部</button></div>
+        <div class="filters"><label class="sr-only" for="source">工具</label><select id="source"><option value="">所有工具（含估算）</option><option value="codex">Codex</option><option value="claude">Claude Code</option><option value="chatgpt-web">ChatGPT 网页 · 文本估算</option><option value="claude-web">Claude 网页 · 文本估算</option></select><label class="sr-only" for="model">模型</label><select id="model"><option value="">所有模型</option></select><button id="export" class="export">↓ 导出 CSV</button></div>
+        <div class="custom-dates"><label for="from">开始日期</label><input type="date" id="from"><span>—</span><label class="sr-only" for="to">结束日期</label><input type="date" id="to" aria-label="结束日期"><span id="range-note">全部历史 · Asia/Shanghai</span></div>
+      </section>
+      <div id="message" class="message" role="status" aria-live="polite" hidden></div>
+      <div id="web-note" class="message" hidden>网页数据是可见聊天文本的 Token 估算，按采集日期归档；不包含重复上下文、隐藏推理、图片、附件、缓存或工具调用，不代表服务端实际消耗。重开页面与重复标签不重复累计。</div>
+      <section class="stats" aria-label="用量概览">
+        <article class="stat featured"><p>总 Token 用量 <span>∑</span></p><strong id="total">—</strong><small id="total-note">正在读取本地统计…</small></article>
+        <article class="stat"><p>普通输入 <span>↗</span></p><strong id="input">—</strong><small>不含缓存读取与写入</small></article>
+        <article class="stat"><p>输出 Token <span>↙</span></p><strong id="output">—</strong><small id="reasoning">包含推理 Token</small></article>
+        <article class="stat"><p>缓存 Token <span>◫</span></p><strong id="cache">—</strong><small id="cache-note">读取 + 写入</small></article>
+      </section>
+      <section class="charts">
+        <article class="panel trend-panel"><div class="panel-heading"><div><h2>用量趋势</h2><p id="trend-caption">按天查看你的 AI 活动</p></div><span class="legend"><i></i> Token</span></div><div id="trend" class="trend" role="img" aria-label="每日 Token 用量趋势"></div></article>
+        <article class="panel model-panel"><div class="panel-heading"><div><h2>模型分布</h2><p>哪些模型陪你完成了工作</p></div><span class="panel-mark">◉</span></div><div id="model-list" class="model-list"></div></article>
+      </section>
+      <section class="bottom-grid">
+        <article class="panel"><div class="panel-heading"><div><h2>最近用量</h2><p>最近 60 条已记录用量</p></div><span id="record-count" class="pill">—</span></div><div class="table-wrap"><table><thead><tr><th>时间</th><th>工具 / 模型</th><th class="numeric">输入</th><th class="numeric">输出</th><th class="numeric">总量</th></tr></thead><tbody id="recent"></tbody></table></div></article>
+        <article class="panel"><div class="panel-heading"><div><h2>项目用量</h2><p>按日志中的工作目录归属</p></div><span class="panel-mark">⌘</span></div><div id="projects" class="project-list"></div></article>
+      </section>
+      <section class="source-panel" aria-label="数据来源"><div><span class="source-dot"></span><strong>本地数据源</strong><span id="sources">正在检测…</span><a href="/browser.html">连接网页统计</a></div><p id="sync-status">等待首次同步</p></section>
+      <footer><span>本地统计 · 网页扩展仅回传计数 · 不保存聊天正文</span><span>日志记录调用消耗；网页仅估算可见文本，两种口径分别标注。</span></footer>
+    </main>
+  </div>
+</body>
+</html>

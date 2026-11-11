@@ -1,0 +1,20 @@
+{
+  "name": "local-token-meter",
+  "version": "1.1.0",
+  "private": true,
+  "description": "A glass-style Windows token widget for Codex and Claude Code, with optional browser text estimates.",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/Whitersir/token-glass.git" },
+  "homepage": "https://github.com/Whitersir/token-glass#readme",
+  "bugs": { "url": "https://github.com/Whitersir/token-glass/issues" },
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File start.ps1",
+    "dashboard": "node src/cli.js serve --open",
+    "sync": "node src/cli.js sync",
+    "report": "node src/cli.js report",
+    "prepare:browser": "node src/prepare-browser-extension.js",
+    "test": "node --test"
+  }
+}

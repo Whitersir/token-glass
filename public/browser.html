@@ -1,0 +1,11 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>连接网页统计</title><link rel="stylesheet" href="/style.css"><script src="/browser-setup.js" defer></script></head><body><main class="shell">
+<header><div class="brand">Token / 连接网页统计</div><a href="/">返回统计</a></header>
+<div class="heading"><div><h1>连接 ChatGPT / Claude 网页</h1><p class="subtitle">Chrome 只需加载一次本地扩展，以后自动采集可见聊天文本的 Token 估算。</p></div></div>
+<section class="panel panel-heading"><div>
+<ol><li>在 Chrome 地址栏输入 <strong>chrome://extensions</strong>，打开右上角“开发者模式”。</li><li>点击“加载已解压的扩展程序”，选择这个文件夹：<p id="folder">正在读取路径…</p></li><li>回到 ChatGPT 或 Claude 网页，刷新一次。点击扩展图标可查看连接状态。</li></ol>
+<p id="connected" role="status">等待扩展连接…</p>
+<p>悬浮条右键 → “统计来源”，可选自动跟随、ChatGPT 网页、Claude 网页或全部来源。</p>
+</div></section>
+<div class="message">网页数据是可见文本估算，不是官方消耗。首次打开的历史消息按本机采集日归档；不包含图片、附件、上下文重复发送、隐藏推理、缓存与未加载历史。重开同一会话不会重复累计。不同分支或重新生成的消息不等同于独立调用次数。</div>
+<footer>扩展只在 chatgpt.com、chat.openai.com、claude.ai 上运行；聊天正文不写入本地统计，也不发送到外部服务器。本机连接配置已生成，请勿分享 connection.js。</footer>
+</main></body></html>
